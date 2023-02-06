@@ -13,6 +13,7 @@ namespace WeatherApp.ViewModel
     public class WeatherVM : INotifyPropertyChanged
     {
         private string query;
+        public SearchCommand SearchCommand { get; set; }
 
         public WeatherVM()
         {
@@ -39,7 +40,6 @@ namespace WeatherApp.ViewModel
             SearchCommand = new SearchCommand(this);
         }
 
-        private SearchCommand SearchCommand { get; set; }
 
 
         public string Query

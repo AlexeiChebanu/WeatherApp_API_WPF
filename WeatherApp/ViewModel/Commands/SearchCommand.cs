@@ -13,9 +13,9 @@ namespace WeatherApp.ViewModel.Commands
 
         public event EventHandler CanExecuteChanged;
 
-        public SearchCommand(WeatherVM vM)
+        public SearchCommand(WeatherVM vm)
         {
-            VM = vM;
+            VM = vm;
         }
 
         public bool CanExecute(object parameter)
