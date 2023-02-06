@@ -12,11 +12,36 @@ namespace WeatherApp.ViewModel
     {
         private string query;
 
+        public WeatherVM()
+        {
+            /*if (DesignerProperties.GetIsInDesignMode(new System.Windows.DependencyObject()))
+            {*/
+                selectedCity = new City
+                {
+                    LocalizedName = "New York"
+                };
+                currentConditions = new CurrentConditions
+                {
+                    WeatherText = "Partly Cloudy",
+                    Temperature = new Temperature
+                    {
+                        Metric = new Units
+                        {
+                            Value = 21
+                        }
+                    }
+                };
+            
+        }
+
         public string Query
         {
             get { return query; }
-            set { query = value; 
-                  OnPropertyChanged("Query"); }
+            set
+            {
+                query = value;
+                OnPropertyChanged("Query");
+            }
         }
 
         private CurrentConditions currentConditions;
@@ -24,7 +49,9 @@ namespace WeatherApp.ViewModel
         public CurrentConditions CurrentConditions
         {
             get { return currentConditions; }
-            set { currentConditions = value;
+            set
+            {
+                currentConditions = value;
                 OnPropertyChanged("CurrentConditions");
             }
         }
@@ -34,7 +61,9 @@ namespace WeatherApp.ViewModel
         public City SelectedCity
         {
             get { return selectedCity; }
-            set { selectedCity = value;
+            set
+            {
+                selectedCity = value;
                 OnPropertyChanged("SelectedCity");
             }
         }
